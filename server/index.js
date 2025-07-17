@@ -6,11 +6,16 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({
+const corsOptions = {
   origin: 'https://noodleworks-frontend.netlify.app',
-  methods: ['GET', 'POST'],
+  methods: ['GET','POST','OPTIONS'],
+  allowedHeaders: ['Content-Type'],
   credentials: true
-}));
+};
+
+app.use(cors(corsOptions)); 
+app.options('*', cors(corsOptions));
+
 
 app.use(express.json());
 
