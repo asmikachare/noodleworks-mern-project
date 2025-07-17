@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://your-backend-url.com/api' 
+  ? 'https://noodleworks-backend.onrender.com/api' 
   : 'http://localhost:3001/api';
 
 const ContactPage = () => {
